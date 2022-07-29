@@ -38,7 +38,6 @@ class UploadRequestBody(
                 handler.post(ProgressUpdate(uploaded, length))
                 uploaded += read
                 sink.write(buffer, 0, read)
-
             }
         }
     }
@@ -50,7 +49,6 @@ class UploadRequestBody(
         override fun run() {
             callback.progressUpdate((100 * uploaded / total).toInt())
         }
-
     }
 
     companion object {
